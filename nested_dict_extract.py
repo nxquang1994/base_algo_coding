@@ -2,26 +2,27 @@
 
 ** Requirements:
 - Give a UNKNOWN NESTED LEVEL dictionary. We don't know the dictionary's shape or any dictionary's metadata
-- Write a function to remove all newline charactors on all string value in dict
+- Write a function to remove all newline charactors \n and escaped newline charactor \\n on all string value in dict
 - All other value's data type is kept normally
 - All two or more whitespace charactors side by side should be replaced by single string
+"""
 
-** For example: 
-* This dictionary below is messy and we need to remove all newline charactors
+# For example: 
+# This dictionary below is messy and we need to remove all newline charactors
 dict_sample_1 = {
     "texts": [
-        "text_1": {
+        {
             "title": "The \n\n spiderman",
             "content": "This is the content\n\n. After new line\n. Final new line\n"
         },
-        "text_2": {
+        {
             "rate": 4.5,
             "content": "Content has\n\n"
         },
-        "text_3": {
-            "sub_text": {
-                "title": "Title contains \n and\n"
-            }
+        "This is the text with newline \\n\\n",
+        {
+            "random_array": ["Hello \n \\n World", "No new line"],
+            "string": "This is a random string\n\n",
         }
     ],
     "description": "This description has\n\n",
@@ -30,21 +31,21 @@ dict_sample_1 = {
     }
 }
 
-*The correct output should be
+# The correct output should be
 processed_dict = {
     "texts": [
-        "text_1": {
+        {
             "title": "The spiderman",
             "content": "This is the content. After new line. Final new line"
         },
-        "text_2": {
+        {
             "rate": 4.5,
             "content": "Content has"
         },
-        "text_3": {
-            "sub_text": {
-                "title": "Title contains and"
-            }
+        "This is the text with newline",
+        {
+            "random_array": ["Hello World", "No new line"],
+            "string": "This is a random string",
         }
     ],
     "description": "This description has",
@@ -53,7 +54,7 @@ processed_dict = {
     }
 }
 
-"""
+
 
 def extracted_dict_string(raw_dict: dict):
     new_dict = raw_dict

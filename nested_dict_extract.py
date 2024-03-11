@@ -2,9 +2,9 @@
 
 ** Requirements:
 - Give a UNKNOWN NESTED LEVEL dictionary. We don't know the dictionary's shape or any dictionary's metadata
-- Write a function to remove all newline charactors \n and escaped newline charactor \\n on all string value in dict
+- Write a function to remove all the newline characters \n and the escaped newline characters \\n on all string value in dict
 - All other value's data type is kept normally
-- All two or more whitespace charactors side by side should be replaced by single string
+- All two or more whitespace characters side by side should be replaced by single whitespace
 """
 
 # For example: 

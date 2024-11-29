@@ -4,7 +4,7 @@
 - Give a UNKNOWN NESTED LEVEL dictionary. We don't know the dictionary's shape or any dictionary's metadata
 - Write a function to remove all the newline characters \n and the escaped newline characters \\n on all string value in dict
 - All other value's data type is kept normally
-- All two or more whitespace characters side by side should be replaced by single whitespace
+- All two or more consecutive whitespace characters should be replaced by single whitespace
 """
 
 # For example: 
@@ -56,7 +56,7 @@ processed_dict = {
 
 
 
-def extracted_dict_string(raw_dict: dict):
+def process_dict_string(raw_dict: dict):
     new_dict = raw_dict
     # TODO: Write your code to change new_dict here
     return new_dict
